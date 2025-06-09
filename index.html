@@ -2,67 +2,67 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="color-scheme" content="light dark">
-    <link rel="icon" href="data:,">
-    <title>LaTex Bibliography Optimizer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="bibopt.github.io" target="_blank">
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:,">
+  <title>LaTex Bibliography Optimizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="bibopt.github.io" target="_blank">
 </head>
 
 <body>
-    <header>
-        <figure>
-            <img src="logo.png" alt="logo" height="199" />
-            <!-- <figcaption>An elephant at sunset</figcaption> -->
-        </figure>
-        <h1>bib optimizer (Latex bibliography optimizer)</h1>
-        <h2>
-            Automates bibliography management by removing unused citations
-            <br />
-            and reordering the remaining ones to match their appearance in the <code>.tex</code> file.
-        </h2>
-        <em><a href="https://stackoverflow.com/a/44990733">What is this?</a></em> (stackoverflow)
-    </header>
-    <main>
-        <h3>
-            Setup
+  <header>
+    <figure>
+      <img src="logo.png" alt="logo" height="199" />
+      <!-- <figcaption>An elephant at sunset</figcaption> -->
+    </figure>
+    <h1>bib optimizer (Latex bibliography optimizer)</h1>
+    <h2>
+      Automates bibliography management by removing unused citations
+      <br />
+      and reordering the remaining ones to match their appearance in the <code>.tex</code> file.
+    </h2>
+    <em><a href="https://stackoverflow.com/a/44990733">What is this?</a></em> (stackoverflow)
+  </header>
+  <main>
+    <h3>
+      Setup
+      <small>
+        <small>
+          <small>
             <small>
-                <small>
-                    <small>
-                        <small>
-                            (<a href="https://pypi.org/project/bib-optimizer/">pypi</a>)
-                        </small>
-                    </small>
-                </small>
+              (<a href="https://pypi.org/project/bib-optimizer/">pypi</a>)
             </small>
-            :
-        </h3>
-        <pre>pip install bib_optimizer</pre>
+          </small>
+        </small>
+      </small>
+      :
+    </h3>
+    <pre>pip install bib_optimizer</pre>
 
-        <p>or:</p>
-        <pre>python -m pip install bib_optimizer</pre>
+    <p>or:</p>
+    <pre>python -m pip install bib_optimizer</pre>
 
-        <footnote>
-            <i><small> This requires Python 3.8 or newer versions.</small></i>
-        </footnote>
-        <h3>How to use:</h3>
-        <pre>
+    <footnote>
+      <i><small> This requires Python 3.8 or newer versions.</small></i>
+    </footnote>
+    <h3>How to use:</h3>
+    <pre>
         bibopt &lt;main.tex&gt; &lt;ref.bib&gt; &lt;ref_opt.bib&gt;
     </pre>
-        <ul>
-            <li><code>main.tex</code> – The LaTeX source file.</li>
-            <li><code>ref.bib</code> – The original bibliography file. </li>
-            <li><code>ref_opt.bib</code> – A placeholder filename for the newly generated, cleaned, and properly ordered
-                bibliography file.</li>
-        </ul>
-        <p>The input files will <strong>remain unchanged</strong>.</p>
+    <ul>
+      <li><code>main.tex</code> – The LaTeX source file.</li>
+      <li><code>ref.bib</code> – The original bibliography file. </li>
+      <li><code>ref_opt.bib</code> – A placeholder filename for the newly generated, cleaned, and properly ordered
+        bibliography file.</li>
+    </ul>
+    <p>The input files will <strong>remain unchanged</strong>.</p>
 
 
-        <h3>Show cases:</h3>
+    <h3>Show cases:</h3>
 
-        <u>sample_main.tex</u>
-        <pre>
+    <u>sample_main.tex</u>
+    <pre>
         \documentclass[12pt,twocolumn,letterpaper]{article}
         \usepackage[pdfstartview=FitH]{hyperref}
         \hypersetup{
@@ -87,8 +87,8 @@
         \end{document}
     </pre>
 
-        <u>sample_ref.bib</u>
-        <pre>
+    <u>sample_ref.bib</u>
+    <pre>
         @misc{entry1,
             title = {Bapuwm Azzuursiqo Faodinip Idnevy Wvntif},
             author = {Spoahir Llodnm and Yvhuogm Vfzecvbvv},
@@ -378,8 +378,8 @@
           }          
     </pre>
 
-        <u>sample_ref_opt.bib</u>
-        <pre>
+    <u>sample_ref_opt.bib</u>
+    <pre>
         @article{firstref,
             author = {Firas Firman and Firley Firth},
             bdsk-url-1 = {https://www.flurstofurst.zq/articles/first-leap-jx89qr},
@@ -420,17 +420,25 @@
             year = {2003}
         }        
     </pre>
-        <hr>
-        <footnote>
-            <p><a href="https://github.com/kwyip/bib_optimizer">Source</a></p>
-            <i>Last revised: 2025-04-17.</i> <br />
-            <p>Ka Wa Yip <br />
-                <a href="mailto:yipkawa@gmail.com">
-                    <img alt="Static Badge"
-                        src="https://img.shields.io/badge/yipkawa%40gmail.com-%23000000?style=plastic">
-                </a>
-        </footnote>
-    </main>
+    <hr>
+    <h4 id="new">New feature (version 0.4)</h4>
+    If the <code>main.tex</code> calls inputs from other <code>.tex</code> (e.g., with <code>\input{...}</code>), the
+    newly generated <code>ref_opt.bib</code>
+    will preserve the order order of appearances in the <code>main.tex</code> with each inputted <code>.tex</code> as
+    well.
+    </br>
+    (The dependent <code>.tex</code> files need to be placed in the same directory as <code>main.tex</code>.)
+    <hr>
+    <footnote>
+      <p><a href="https://github.com/kwyip/bib_optimizer">Source</a></p>
+
+      <i>Last revised: 2025-06-09.</i> <br />
+      <p>Ka Wa Yip <br />
+        <a href="mailto:yipkawa@gmail.com">
+          <img alt="Static Badge" src="https://img.shields.io/badge/yipkawa%40gmail.com-%23000000?style=plastic">
+        </a>
+    </footnote>
+  </main>
 </body>
 
 </html>
