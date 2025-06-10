@@ -8,6 +8,15 @@
   <title>LaTex Bibliography Optimizer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="bibopt.github.io" target="_blank">
+  <script>
+    var sites = [
+      "https://tex.stackexchange.com/questions/32032/extract-all-citations-from-tex-file/738838#738838",
+      "https://tex.stackexchange.com/questions/76420/cleaning-up-a-bib-file/738846#738846"];
+    function randomSite() {
+      var i = parseInt(Math.random() * sites.length);
+      location.href = sites[i];
+    }
+  </script>
 </head>
 
 <body>
@@ -22,7 +31,10 @@
       <br />
       and reordering the remaining ones to match their appearance in the <code>.tex</code> file.
     </h2>
-    <em><a href="https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex">What is a bib?</a></em> (overleaf)
+    <em>
+      <a href="#" onclick="randomSite();">What is this?</a>
+    </em>
+    (stackexchange)
   </header>
   <main>
     <h3>
