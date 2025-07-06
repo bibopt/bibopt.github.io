@@ -433,13 +433,16 @@
         }        
     </pre>
     <hr>
-    <h4 id="new">New feature (version 0.4)</h4>
+    <h4 id="new">New feature (version 0.4.0)</h4>
     If the <code>main.tex</code> calls inputs from other <code>.tex</code> (e.g., with <code>\input{...}</code>), the
     newly generated <code>ref_opt.bib</code>
     will preserve the order order of appearances in the <code>main.tex</code> with each inputted <code>.tex</code> as
     well.
     </br>
     (The dependent <code>.tex</code> files need to be placed in the same directory as <code>main.tex</code>.)
+    <hr>
+    <h4 id="new">New feature (version 0.4.1)</h4>
+    On top of version 0.4, skip any <code>\input</code> <code>.tex</code> file if not found.
     <hr>
     <footnote>
       <p><a href="https://github.com/kwyip/bib_optimizer">Source</a></p>
