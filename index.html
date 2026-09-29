@@ -26,6 +26,18 @@
       <!-- <figcaption>An elephant at sunset</figcaption> -->
     </figure>
     <h1>bib optimizer (Latex bibliography optimizer)</h1>
+    <p>
+      <a href="https://github.com/kwyip/bib_optimizer/blob/main/LICENSE"><img
+          src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+      <a href="https://pypi.org/project/bib-optimizer/"><img
+          src="https://img.shields.io/pypi/pyversions/bib_optimizer" alt="Supported Python versions" /></a>
+      <a href="https://pypi.org/project/bib-optimizer"><img
+          src="https://img.shields.io/badge/CalVer-2025.0416-ff5733" alt="CalVer 2025.0416" /></a>
+      <a href="https://pypi.org/project/bib-optimizer/#files"><img
+          src="https://img.shields.io/badge/PyPI-wheels-d8d805" alt="PyPI wheels" /></a>
+      <a href="https://pepy.tech/project/bib_optimizer"><img
+          src="https://pepy.tech/badge/bib_optimizer/month" alt="Monthly downloads" /></a>
+    </p>
     <h2>
       Automates bibliography management by removing unused citations
       <br />
@@ -50,10 +62,43 @@
       </small>
       :
     </h3>
-    <pre>pip install bib_optimizer</pre>
+    <p>Create and activate a virtual environment, then install the latest release from PyPI:</p>
+    <pre>python -m venv .venv
+
+# Linux/macOS
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
+
+python -m pip install --upgrade bib_optimizer</pre>
 
     <p>or:</p>
-    <pre>python -m pip install bib_optimizer</pre>
+    <pre>uv tool install bib_optimizer</pre>
+
+    <p>After either installation method, the <code>bibopt</code> command is available in your terminal.</p>
+
+    <h3>Install from source for development:</h3>
+    <p>This repository uses <a href="https://docs.astral.sh/uv/">uv</a> for project and dependency management.</p>
+    <ol>
+      <li>
+        <strong>Clone the repository:</strong>
+        <pre>git clone https://github.com/kwyip/bib_optimizer.git
+cd bib_optimizer</pre>
+      </li>
+      <li>
+        <strong>Install the environment:</strong>
+        <pre>uv sync</pre>
+      </li>
+      <li>
+        <strong>Activate the environment:</strong>
+        <pre># Linux/macOS
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate</pre>
+      </li>
+    </ol>
 
     <footnote>
       <i><small> This requires Python 3.8 or newer versions.</small></i>
@@ -445,13 +490,18 @@
     On top of version 0.4, skip any <code>\input</code> <code>.tex</code> file if not found.
     <hr>
     <h4 id="new">New feature (version 0.4.2)</h4>
-    In addition to handling the <code>\input{...}</code> command, it 
-    also supports the <code>\include{...}</code> command.
+    Added support for the <code>\include{...}</code> command in addition to <code>\input{...}</code>, fixing missing
+    citations when a LaTeX project uses <code>\include</code> to split its content across files.
     <hr>
+    <h4 id="new">New feature/Fix (version 0.4.3)</h4>
+    Added Python 3.14 support and constrained <code>bibtexparser</code> to the compatible 1.x release series, fixing
+    <code>ModuleNotFoundError: No module named 'bibtexparser.bwriter'</code> during fresh installations.
+    <hr>
+    <p>&hearts; Lastly executed on Python <code>3.14</code> on 2026-09-29.</p>
     <footnote>
       <p><a href="https://github.com/kwyip/bib_optimizer">Source</a></p>
 
-      <i>Last revised: 2025-07-14.</i> <br />
+      <i>Last revised: 2026-09-29.</i> <br />
       <p>Ka Wa Yip <br />
         <a href="mailto:yipkawa@gmail.com">
           <img alt="Static Badge" src="https://img.shields.io/badge/yipkawa%40gmail.com-%23000000?style=plastic">
