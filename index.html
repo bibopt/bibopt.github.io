@@ -89,8 +89,8 @@ cd bib_optimizer</pre>
       </li>
       <li>
         <strong>Install the environment:</strong>
-        <pre># This creates the virtual environment and installs all dependencies
-uv sync</pre>
+        <pre># This installs the CLI and all development/build tools
+uv sync --locked --all-groups</pre>
       </li>
       <li>
         <strong>Activate the environment:</strong>
@@ -103,7 +103,7 @@ source .venv/bin/activate
     </ol>
 
     <footnote>
-      <i><small> This requires Python 3.8 or newer versions.</small></i>
+      <i><small> The CLI requires Python 3.8 or newer. Development and build tools require Python 3.10 or newer.</small></i>
     </footnote>
     <h3>How to use:</h3>
     <pre>
@@ -524,11 +524,17 @@ Return only the optimized `.bib` file.</pre>
     <h4 id="version-0-5-0">New feature/Fix (version 0.5.0)</h4>
     Added <code>SKILL.md</code> for code-free use with an AI agent.
     <hr>
+    <h4 id="version-0-5-2">Security update (version 0.5.2)</h4>
+    <p>Updated development and build dependencies to address known security vulnerabilities, while retaining
+      <code>bibtexparser&gt;=1.4.3,&lt;2</code> and Python 3.8 or newer support for the CLI.
+      Development and build tools now require Python 3.10 or newer. Added CLI regression tests.</p>
+    <p><a href="https://github.com/kwyip/bib_optimizer/releases/tag/0.5.2">Release notes for 0.5.2</a></p>
+    <hr>
     <p>&hearts; Lastly executed on Python <code>3.14</code> on 2026-09-29.</p>
     <footnote>
       <p><a href="https://github.com/kwyip/bib_optimizer">Source</a></p>
 
-      <i>Last revised: 2026-09-29.</i> <br />
+      <i>Last revised: 2026-11-02.</i> <br />
       <p>Ka Wa Yip <br />
         <a href="mailto:yipkawa@gmail.com">
           <img alt="Static Badge" src="https://img.shields.io/badge/yipkawa%40gmail.com-%23000000?style=plastic">
